@@ -1,0 +1,8 @@
+<% if @settings %>
+    <p>
+      <label>
+        Estimation calculation field name
+      </label>
+      <%= text_field_tag("settings[announced_estimation]",  @settings[:announced_estimation]) %>
+    </p>
+<% end %>
