@@ -20,7 +20,7 @@ Rails.application.config.to_prepare do
       issue = context[:issue]
       announced_estimation = Setting.plugin_redmine_calculate_announced_estimation['announced_estimation']
       if check_estimation_exist?(issue, announced_estimation)
-        estimation = issue.custom_field_values.select{|cf| cf.custom_field.name = "announced estimation"}.first.value
+        estimation = issue.custom_field_values.select{|cf| cf.custom_field.name == "announced estimation"}.first.value
         total_times = issue.time_entries.map(&:hours).sum.round(2)
         s = "<tr>\n"
         s += "<th>Calculate estimation</th><td >#{estimation.to_f - total_times}</td>\n"
