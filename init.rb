@@ -25,7 +25,7 @@ Rails.application.config.to_prepare do
         estimation = cf.value if cf
         total_times = issue.time_entries.map(&:hours).sum.round(2)
         s = "<tr>\n"
-        s += "<th> Rest to annuncement</th><td >#{estimation.to_f - total_times}</td>\n"
+        s += "<th> Rest to Announcement</th><td >#{estimation.to_f - total_times}</td>\n"
         s += '</tr>'
         s
       end
